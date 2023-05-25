@@ -4,6 +4,19 @@ from django.db import models
 
 class Task(models.Model):
     title = models.CharField(max_length=100)
+    
+    MEDIA_CHOICES = (
+        ('L','Low'),    
+        ('M','Medium'),    
+        ('H','High'),    
+    )
+    
+    priority = models.CharField(
+        max_length=2,
+        choices=MEDIA_CHOICES,
+        default='L',
+    )
+    
     completed = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
 
