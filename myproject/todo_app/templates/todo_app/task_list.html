@@ -10,6 +10,7 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Items</th>
+        <th scope="col">Priority</th>
         <th scope="col">Update</th>
         <th scope="col">Delete</th>
       </tr>
@@ -19,6 +20,7 @@
       <tr>
         <th scope="row"> {{ forloop.counter }} </th>
         <td> {{ task.title }} </td>
+        <td> {{ task.priority }} </td>
         <td><a href=" {% url 'todo:task-update' task.id  %} " class="btn btn-warning" title="update">Update</a></td>
         <td><a href=" {% url 'todo:task-delete' task.id  %} " class="btn btn-danger" title="delete">Delete</a></td>
       </tr>

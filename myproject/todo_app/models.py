@@ -6,15 +6,15 @@ class Task(models.Model):
     title = models.CharField(max_length=100)
     
     MEDIA_CHOICES = (
-        ('L','Low'),    
-        ('M','Medium'),    
-        ('H','High'),    
+        ('Low','Low'),    
+        ('Medium','Medium'),    
+        ('High','High'),    
     )
     
     priority = models.CharField(
-        max_length=2,
+        max_length=10,
         choices=MEDIA_CHOICES,
-        default='L',
+        default='Low',
     )
     
     completed = models.BooleanField(default=False)
